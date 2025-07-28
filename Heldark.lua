@@ -1,4 +1,4 @@
--- HERLANTUPAPI HUB 😈 By HelDarkz v1.0
+-- HERLANTUPAPI HUB 😈 By HelDarkz v1.1 (AUTO START)
 
 local whitelist = {
     ["HERLAN37237"] = true,
@@ -13,35 +13,41 @@ if not whitelist[LocalPlayer.Name] then
     return
 end
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/ui-lib/main/Lib.lua"))()
-local window = library:CreateWindow("HERLANTUPAPI 👑")
+-- Opcional: mostrar mensaje en consola
+print("✅ Whitelist verificada. Iniciando autofarm...")
 
-window:Button("💪 Farmear Fuerza", function()
-    local ReplicatedStorage = game:GetService("ReplicatedStorage")
-    local BridgeNet = require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("BridgeNet2"))
+-- Variables necesarias
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local BridgeNet = require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("BridgeNet2"))
 
-    local remote = BridgeNet.ReferenceBridge("imadumbexploiter9d7f88729c2c6ceff3bb1ce223049848")
-    local ANZAHL_DUPLIKATIONEN = 150
+-- Remote para fuerza
+local fuerzaRemote = BridgeNet.ReferenceBridge("imadumbexploiter9d7f88729c2c6ceff3bb1ce223049848")
 
+-- Remote para vida
+local vidaRemote = BridgeNet.ReferenceBridge("imadumbexploiter3527d36bd7d656f96a836f1df5085590")
+
+-- Loops automáticos
+local function autoFarmFuerza()
     while true do
-        for i = 1, ANZAHL_DUPLIKATIONEN * 10 * 2.5 do
-            remote:Fire()
+        for i = 1, 150 * 10 * 2.5 do
+            fuerzaRemote:Fire()
         end
         task.wait(2)
     end
-end)
+end
 
-window:Button("❤️‍🔥 Farmear Vida", function()
-    local ReplicatedStorage = game:GetService("ReplicatedStorage")
-    local BridgeNet = require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("BridgeNet2"))
-
-    local pullUpRemote = BridgeNet.ReferenceBridge("imadumbexploiter3527d36bd7d656f96a836f1df5085590")
-    local DUPLIKATIONEN = 150
-
+local function autoFarmVida()
     while true do
-        for i = 1, DUPLIKATIONEN * 10 * 2.5 do
-            pullUpRemote:Fire()
+        for i = 1, 150 * 10 * 2.5 do
+            vidaRemote:Fire()
         end
         task.wait(2)
     end
-end)
+end
+
+-- Ejecutar ambas funciones en paralelo
+task.spawn(autoFarmFuerza)
+task.spawn(autoFarmVida)
+
+-- Mensaje opcional
+print("🔥 HERLANTUPAPI está farmeando fuerza y vida automáticamente.")
