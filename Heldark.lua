@@ -47,3 +47,4 @@ task.spawn(function()
 end)
 
 print("🔥 HERLANTUPAPI está farmeando fuerza y vida automáticamente.")
+
