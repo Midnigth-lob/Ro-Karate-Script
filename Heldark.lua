@@ -1,9 +1,8 @@
 -- HERLANTUPAPI HUB 😈 By HelDarkz v1.0
 
 local whitelist = {
-    ["HERLAN372371"] = true,
+    ["HERLAN37237"] = true,
     ["Elcapo3000677"] = true,
-    ["OtroNombre"] = true,
 }
 
 local Players = game:GetService("Players")
