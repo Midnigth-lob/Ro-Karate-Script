@@ -1,1 +1,51 @@
 # Ro-Karate-Script
+
+-- HERLANTUPAPI HUB 😈 By HelDarkz v1.0
+
+local whitelist = {
+    ["HERLAN372371"] = true,
+    ["Elcapo3000677"] = true,
+    ["NombreDeEseUsuario2"] = true,
+    -- Agrega más cuentas aquí
+}
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+if not whitelist[LocalPlayer.Name] then
+    LocalPlayer:Kick("No estás autorizado para usar HERLANTUPAPI.")
+    return
+end
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/ui-lib/main/Lib.lua"))()
+local window = library:CreateWindow("HERLANTUPAPI 👑")
+
+window:Button("💪 Farmear Fuerza", function()
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local BridgeNet = require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("BridgeNet2"))
+
+    local remote = BridgeNet.ReferenceBridge("imadumbexploiter9d7f88729c2c6ceff3bb1ce223049848")
+    local ANZAHL_DUPLIKATIONEN = 150
+
+    while true do
+        for i = 1, ANZAHL_DUPLIKATIONEN * 10 * 2.5 do
+            remote:Fire()
+        end
+        task.wait(2)
+    end
+end)
+
+window:Button("❤️‍🔥 Farmear Vida", function()
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local BridgeNet = require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("BridgeNet2"))
+
+    local pullUpRemote = BridgeNet.ReferenceBridge("imadumbexploiter3527d36bd7d656f96a836f1df5085590")
+    local DUPLIKATIONEN = 150
+
+    while true do
+        for i = 1, DUPLIKATIONEN * 10 * 2.5 do
+            pullUpRemote:Fire()
+        end
+        task.wait(2)
+    end
+end)
