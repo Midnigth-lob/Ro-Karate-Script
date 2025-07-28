@@ -3,8 +3,7 @@
 local whitelist = {
     ["HERLAN372371"] = true,
     ["Elcapo3000677"] = true,
-    ["NombreDeEseUsuario2"] = true,
-    -- Agrega más cuentas aquí
+    ["OtroNombre"] = true,
 }
 
 local Players = game:GetService("Players")
